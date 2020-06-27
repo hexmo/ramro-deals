@@ -1,7 +1,7 @@
 
 # nepali-shopping-guide <img src="https://github.com/hexmo/nepali-shopping-guide/blob/master/static/images/favicon.png" alt="Project Logo"/>
 
-## Skills showcase project for FuseMachines AI Program**
+** Skills showcase project for FuseMachines AI Program**
 
 ## Team Members
 * Mohit Acharya [@hexmo](https://github.com/hexmo)
