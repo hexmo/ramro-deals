@@ -7,6 +7,6 @@
 * Sandesh Dhakal [@sandesh8888](https://github.com/sandesh8888)
 
 **About the app**
-* Simple online shopping price comparition site for Nepali market. 
-* It utilizes the power of web scrapping to scrape product data from various nepali sites like [daraz](https://www.daraz.com.np/), [sastodeal](https://www.sastodeal.com/) and [hamroobazar](http://hamrobazar.com/) to find best deals for your money.
+* Simple online shopping price comparision site for Nepali market. 
+* It utilizes the power of web scrapping to scrape product data from various nepali sites like [daraz](https://www.daraz.com.np/), [sastodeal](https://www.sastodeal.com/) and [hamrobazar](http://hamrobazar.com/) to find best deals for your money.
 * This app will help you to save time as well as money. 
