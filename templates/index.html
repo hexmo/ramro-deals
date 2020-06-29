@@ -3,32 +3,46 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Nepal Shopping Guide</title>
+    <title>Ramro Deals</title>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
 </head>
 
 <body>
-    <nav>
+    <nav id="top-id">
         <div class="logo">
             <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nepal Shopping Guide Logo">
         </div>
     </nav>
-
-    <section class="sites-list-section">
-        <h2>Our supported sites</h2>
-        <div class="sites-list-container">
-            <div class="sites-list">
-                <img src="{{ url_for('static', filename='images/daraz_logo.png') }}" alt="Daraz logo">
-            </div>
-            <div class="sites-list">
-                <img src="{{ url_for('static', filename='images/sastodeal_logo.png') }}" alt="Sastodeal logo">
-            </div>
-            <div class="sites-list">
-                <img src="{{ url_for('static', filename='images/hamrobazar_logo.png') }}" alt="Hamrobazar logo">
-            </div>
+    <section id="search">
+        <div class="search-bar-holder">
+            <form action="/search" >
+                <input type="text" placeholder="What do you want to buy?">
+                <button type="submit">Search</button>
+            </form>
         </div>
     </section>
+    <footer id="footer1">
+        <section class="sites-list-section">
+            <h2>Supported Sites</h2>
+            <div class="sites-list-container">
+                <div class="sites-list">
+                    <img src="{{ url_for('static', filename='images/daraz_logo.png') }}" alt="Daraz logo">
+                </div>
+                <div class="sites-list">
+                    <img src="{{ url_for('static', filename='images/hamrobazar_logo.png') }}" alt="Hamrobazar logo">
+                </div>
+                <div class="sites-list">
+                    <img src="{{ url_for('static', filename='images/sastodeal_logo.png') }}" alt="Sastodeal logo">
+                </div>
+            </div>
+        </section>
+        <div class="bottom-bar">
+            <a href="https://github.com/hexmo/ramro-deals" target="_blank">Github</a>
+        </div>
+    </footer>
+    <!-- scripts -->
+    <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
 </body>
 
 </html>
