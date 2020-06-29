@@ -111,11 +111,17 @@ form button {
     border: none;
     padding: 0 1em;
     font-size: 1em;
-    color: #FF6600;
+    background-color: #6c9dff;
+    color: white;
     border-radius: 0 1em 1em 0;
     font-weight: 900;
+    transition: background-color 1s ease-in-out;
 }
 
 form button:focus {
     outline-width: 0;
+}
+
+form button:hover {
+    background-color: #ABC1ED;
 }
