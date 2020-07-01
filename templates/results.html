@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Nepal Shopping Guide</title>
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}"/>
+    <title>Ramro Deals</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/results.css') }}">
 </head>
+
 <body>
+    <nav id="top-id">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nepal Shopping Guide Logo">
+        </div>
+    </nav>
+    <h3>Search resuts for {{ searchkey }}</h3>
 
 </body>
+
 </html>

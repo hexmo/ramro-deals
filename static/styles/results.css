@@ -1,0 +1,18 @@
+/* commom */
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* navigation bar */
+
+nav {
+    padding: 0.5em;
+    text-align: center;
+}
+
+.logo img {
+    height: 2em;
+}

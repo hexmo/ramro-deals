@@ -115,7 +115,7 @@ form button {
     color: white;
     border-radius: 0 1em 1em 0;
     font-weight: 900;
-    transition: background-color 1s ease-in-out;
+    transition: background-color 0.25s linear;
 }
 
 form button:focus {
