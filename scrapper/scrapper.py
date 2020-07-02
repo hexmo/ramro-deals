@@ -1,10 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-from product import Product
+from .product import Product
 
 
 def search(search_key):
-    sasto_deal_scrapper('ludo')
+    return sasto_deal_scrapper(search_key)
 
 
 def sasto_deal_scrapper(search_key):

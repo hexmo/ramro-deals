@@ -1,5 +1,5 @@
 
-# nepali-shopping-guide <img src="https://github.com/hexmo/nepali-shopping-guide/blob/master/static/images/favicon.png" alt="Project Logo"/>
+# nepali-shopping-guide
 
 __Skills showcase project for FuseMachines AI Program__
 

@@ -17,3 +17,12 @@ class Product:
 
     def __str__(self):
         return "name: " + self.name + ", price: Nrs." + str(self.price) + ", vendor: " + self.vendor
+
+    def serialize(self):
+        return {
+            'name': self.name,
+            'price': self.price,
+            'image_url': self.image_url,
+            'product_url': self.product_url,
+            'vendor': self.vendor
+        }
