@@ -18,5 +18,5 @@ def search_and_display():
     # use search function of scrapper to search data
     results = search(search_key)
     search_results = [result.serialize() for result in results]
-
-    return render_template('results.html', searchkey=search_key, search_results=search_results)
+    json_search_results = json.dumps(search_results)
+    return render_template('results.html', searchkey=search_key, search_results=json_search_results)
