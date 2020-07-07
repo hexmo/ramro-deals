@@ -99,14 +99,14 @@ section {
     padding: 5px;
     margin: 1em 0.25em;
     border-radius: 20%;
-    background-color: #000;
+    background-color: #868585;
     cursor: pointer; 
 }
 
 .pagination-button:hover{
-    background-color: #868585;
+    background-color: #413b3b;
 }
 
 .active{
-    background-color: #333333;
+    background-color: #000000;
 }

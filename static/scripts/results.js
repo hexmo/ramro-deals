@@ -1,14 +1,19 @@
 var mainData;
 var subData;
+var currentData;
 var currentPage = 1;
-var lastpage = 1;
-var paginationSize = 4;
+var lastPage = 1;
+var paginationSize = 8;
 var productDisplayClass = document.getElementById('product-display');
 
 // listener
 window.addEventListener('DOMContentLoaded', (event) => {
-    displayData(mainData);
     pagination();
+    displayData(mainData, currentPage);
+    currentData = mainData;
+
+    // adding color to first button
+    colorFirstPaginationButton()
 });
 
 
@@ -18,9 +23,16 @@ function assignData(jsonfile) {
     subData = JSON.parse(JSON.stringify(jsonfile));
 }
 
-function displayData(data) {
+function displayData(data, pageNumber) {
+    startIndex = (pageNumber - 1) * paginationSize;
+
+    if (pageNumber === lastPage) {
+        endIndex = data.length;
+    } else {
+        endIndex = startIndex + paginationSize;
+    }
     // looping through json data
-    for (var i = 0; i < data.length; i++) {
+    for (var i = startIndex; i < endIndex; i++) {
         // card OR product container
         var productDiv = document.createElement("div");
         productDiv.className = 'product-card'
@@ -85,7 +97,9 @@ function sortingFilter() {
 function setDefault() {
     // clearing all data
     clearData();
-    displayData(mainData);
+    displayData(mainData, 1);
+    colorFirstPaginationButton()
+    currentData = mainData;
 }
 
 function setDecreasingPrice() {
@@ -94,7 +108,9 @@ function setDecreasingPrice() {
     // sort data
     subData.sort(compareHighPrice);
     // display data
-    displayData(subData);
+    displayData(subData, 1);
+    colorFirstPaginationButton()
+    currentData = subData;
 
 }
 
@@ -104,7 +120,9 @@ function setIncreasingPrice() {
     // sort data
     subData.sort(compareLowPrice);
     // display data
-    displayData(subData);
+    displayData(subData, 1);
+    colorFirstPaginationButton()
+    currentData = subData;
 }
 
 // comparision functions
@@ -140,8 +158,8 @@ function compareHighPrice(a, b) {
 // pagination
 function pagination() {
     paginationContainer = document.getElementById('pagination-container');
-    var totalPages = Math.floor(mainData.length / paginationSize);
-    lastpage = totalPages;
+    var totalPages = Math.ceil(mainData.length / paginationSize);
+    lastPage = totalPages;
 
     for (let i = 0; i < totalPages; i++) {
         button = document.createElement('div');
@@ -158,6 +176,26 @@ function pagination() {
 }
 
 function changePaginationData(id) {
-    console.log(id + " pagination button pressed");
+    currentPage = id;
+    clearData();
+    displayData(currentData, id);
+
+    //changing pagination button color
+    previousSelectedButton = document.getElementsByClassName("active");
+    previousSelectedButton[0].classList.remove('active');
+
+    currentSelectedButton = document.getElementById("pg-btn-"+id);
+    currentSelectedButton.classList.add('active');
 };
 
+function colorFirstPaginationButton(){
+    // removing color from previously selected button
+    previousSelectedButton = document.getElementsByClassName("active");
+    if(previousSelectedButton.length > 0){
+        previousSelectedButton[0].classList.remove('active');
+    }
+
+    // adding color to first button
+    currentSelectedButton = document.getElementById("pg-btn-1");
+    currentSelectedButton.classList.add('active');
+}
