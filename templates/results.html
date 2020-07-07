@@ -11,14 +11,17 @@
 <body>
     <nav id="top-id">
         <div class="logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nepal Shopping Guide Logo">
+            <a href="/">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nepal Shopping Guide Logo">
+            </a>
         </div>
+
     </nav>
     <section>
         <div class="filter">
             <label for="sort">Sort by:</label>
             <select name="sort" id="sort-filter" onchange="sortingFilter()">
-                <option value="default" >Default</option>
+                <option value="default">Default</option>
                 <option value="lowestPrice">Price: Lowest</option>
                 <option value="highestPrice">Price: Highest</option>
             </select>
@@ -26,14 +29,14 @@
         <div id="product-display">
 
         </div>
-        <div class="pagination">
+        <div id="pagination-container">
 
         </div>
     </section>
     <!-- scripts -->
     <script src="{{ url_for('static', filename='scripts/results.js') }}"></script>
     <script type="text/javascript">
-        assignData({{ search_results|safe }});
+        assignData({{ search_results| safe }});
     </script>
 </body>
 

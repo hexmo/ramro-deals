@@ -1,17 +1,21 @@
 var mainData;
 var subData;
+var currentPage = 1;
+var lastpage = 1;
+var paginationSize = 4;
 var productDisplayClass = document.getElementById('product-display');
 
 // listener
 window.addEventListener('DOMContentLoaded', (event) => {
     displayData(mainData);
+    pagination();
 });
 
 
 // this method json data embedded in html page
 function assignData(jsonfile) {
     mainData = jsonfile;
-    subData = jsonfile;
+    subData = JSON.parse(JSON.stringify(jsonfile));
 }
 
 function displayData(data) {
@@ -65,14 +69,14 @@ function clearData() {
     productDisplayClass.innerHTML = "";
 }
 
-function sortingFilter(){
+function sortingFilter() {
     sortObj = document.getElementById('sort-filter');
 
-    if(sortObj.selectedIndex == 0){
+    if (sortObj.selectedIndex == 0) {
         setDefault();
-    }else if (sortObj.selectedIndex == 1){
+    } else if (sortObj.selectedIndex == 1) {
         setIncreasingPrice();
-    }else if (sortObj.selectedIndex == 2){
+    } else if (sortObj.selectedIndex == 2) {
         setDecreasingPrice();
     }
 }
@@ -81,16 +85,15 @@ function sortingFilter(){
 function setDefault() {
     // clearing all data
     clearData();
-
     displayData(mainData);
 }
 
 function setDecreasingPrice() {
     // clearing all data
     clearData();
-
+    // sort data
     subData.sort(compareHighPrice);
-
+    // display data
     displayData(subData);
 
 }
@@ -98,13 +101,15 @@ function setDecreasingPrice() {
 function setIncreasingPrice() {
     // clearing all data
     clearData();
-
+    // sort data
     subData.sort(compareLowPrice);
-
+    // display data
     displayData(subData);
 }
 
-// comparision coditions
+// comparision functions
+
+// low price comparision function
 function compareLowPrice(a, b) {
     let comparision = 0;
 
@@ -117,6 +122,7 @@ function compareLowPrice(a, b) {
     return comparision;
 }
 
+// high price comparision function
 function compareHighPrice(a, b) {
     let comparision = 0;
 
@@ -128,3 +134,30 @@ function compareHighPrice(a, b) {
 
     return comparision;
 }
+
+// pagination codes start from here
+
+// pagination
+function pagination() {
+    paginationContainer = document.getElementById('pagination-container');
+    var totalPages = Math.floor(mainData.length / paginationSize);
+    lastpage = totalPages;
+
+    for (let i = 0; i < totalPages; i++) {
+        button = document.createElement('div');
+        button.className = 'pagination-button';
+        button.id = 'pg-btn-' + (i + 1);
+        button.onclick = function () {
+            changePaginationData(i + 1);
+        }
+        button.innerHTML = i + 1;
+        // attaching
+        paginationContainer.appendChild(button);
+    }
+
+}
+
+function changePaginationData(id) {
+    console.log(id + " pagination button pressed");
+};
+

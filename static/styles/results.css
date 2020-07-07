@@ -30,7 +30,7 @@ section {
     text-align: end;
 }
 
-/*  */
+/*  product card container*/
 
 #product-display {
     display: flex;
@@ -38,9 +38,6 @@ section {
     flex-direction: row;
     justify-content: space-around;
 }
-
-/* filter */
-
 
 /* product card */
 
@@ -89,3 +86,27 @@ section {
     bottom:0;
 }
 
+
+/* pagination */
+#pagination-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pagination-button{
+    color: white;
+    padding: 5px;
+    margin: 1em 0.25em;
+    border-radius: 20%;
+    background-color: #000;
+    cursor: pointer; 
+}
+
+.pagination-button:hover{
+    background-color: #868585;
+}
+
+.active{
+    background-color: #333333;
+}
