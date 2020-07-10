@@ -49,13 +49,17 @@ pip install -r requirements.txt
 Use the following commands to run the project.
 * On windows
 ```
-set FLASK_APP=hello.py
+set FLASK_APP=app.py
 flask run
 ```
 * On Linux and macOS
 ```
 export FLASK_APP=app.py
 flask run
+```
+You can use following command for **flask** instructions.
+```
+flask --help
 ```
 Open URL provided after running these commands to run this project in your browser.
 
